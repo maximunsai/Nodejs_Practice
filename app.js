@@ -6,9 +6,12 @@
 // console.log(module);
 
 // console.log(__filename)
-const num = require('./log');
-const result = num.log(3,5);
-console.log("Result : " + result);
+
+
+
+// const num = require('./log');
+// const result = num.log(3,5);
+// console.log("Result : " + result);
 
 // log('asa');
 
@@ -86,14 +89,15 @@ console.log("Result : " + result);
 
 
 
-// const http = require('http');
+const http = require('http');
 
-// const server = http.createServer((req, res) =>{
-//     if (req.url === '/'){
-//         res.write('Request recieved');
-//         res.end();
-//     }
-// });
+const server = http.createServer((req, res) =>{
+    if (req.url === '/'){
+        res.write('Request recieved using  npm');
+        res.end();
+    }
+});
 
-// server.listen(5000);
-// console.log('listening to port');
+server.listen(5000);
+console.log('listening to port');
+

@@ -89,15 +89,24 @@
 
 
 
-const http = require('http');
+// const http = require('http');
 
-const server = http.createServer((req, res) =>{
-    if (req.url === '/'){
-        res.write('Request recieved using  npm');
-        res.end();
-    }
+// const server = http.createServer((req, res) =>{
+//     if (req.url === '/'){
+//         res.write('Request recieved using  npm');
+//         res.end();
+//     }
+// });
+
+// server.listen(5000);
+// console.log('listening to port');
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send("Hey this is working!");
 });
 
-server.listen(5000);
-console.log('listening to port');
+app.listen(4000);
 

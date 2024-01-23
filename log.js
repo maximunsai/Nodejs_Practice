@@ -1,8 +1,10 @@
 // let url = 'http://mylogger.io/log';
 
-// function log(message){
+function log(a , b){
+    return a * b ;
+    
+}
+module.exports = {log};
 
-//     console.log(message);
-// }
 
-// module.exports = log;
+

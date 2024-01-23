@@ -50,14 +50,27 @@
 // emitter.emit('messagelog', {id:1, url:'http://'});
 
 
+// const http = require('http');
+
+// const server = http.createServer();
+
+// server.on('connection', (stream)=>{
+//     console.log('listening to port');
+// })
+// server.listen(5000);
+
+// console.log('listening to 5000...');
+
+
+
 const http = require('http');
 
-const server = http.createServer();
+const server = http.createServer((req, res) =>{
+    if (req.url === '/'){
+        res.write('Request recieved');
+        res.end();
+    }
+});
 
-server.on('connection', (stream)=>{
-    console.log('listening to port');
-})
 server.listen(5000);
-
-console.log('listening to 5000...');
-
+console.log('listening to port');

@@ -41,12 +41,23 @@
 // })
 
 
-const EventEmitter = require('events');
-const emitter = new EventEmitter;
+// const EventEmitter = require('events');
+// const emitter = new EventEmitter;
 
-emitter.on('messagelog', (arg) =>{
-    console.log('listner called', arg)
-});
-emitter.emit('messagelog', {id:1, url:'http://'});
+// emitter.on('messagelog', (arg) =>{
+//     console.log('listner called', arg)
+// });
+// emitter.emit('messagelog', {id:1, url:'http://'});
 
+
+const http = require('http');
+
+const server = http.createServer();
+
+server.on('connection', (stream)=>{
+    console.log('listening to port');
+})
+server.listen(5000);
+
+console.log('listening to 5000...');
 

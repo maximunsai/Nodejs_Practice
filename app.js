@@ -55,6 +55,19 @@
 // })
 
 
+const fs = require('fs');
+const file = "target.txt";
+
+fs.readFile(file, (err, data)=>{
+    if (err){
+        console.log(error);
+    }
+    else{
+        console.log(data.toString())
+    }
+})
+console.log("File reading....!")
+
 
 
 
@@ -101,12 +114,14 @@
 // server.listen(5000);
 // console.log('listening to port');
 
-const express = require('express');
-const app = express();
 
-app.get('/', (req, res) => {
-    res.send("Hey this is working!");
-});
 
-app.listen(4000);
+// const express = require('express');
+// const app = express();
+
+// app.get('/', (req, res) => {
+//     res.send("Hey this is working!");
+// });
+
+// app.listen(4000);
 
